@@ -1,6 +1,6 @@
 class Animal {
   constructor(name) {
-    this.name = name;
+    this.petName = name;
     this.health = 100;
     this.hunger = 100;
     this.walkies = 100;
