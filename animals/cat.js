@@ -3,14 +3,16 @@ class Animal {
     this.name = name;
     this.health = 100;
     this.hunger = 100;
+    this.walkies = 100;
   }
-  drinks() {
-    this.health += 5;
+  walkies() {
+    this.health += 10;
+    this.hunger -= 10;
     return this;
   }
 
-  eats() {
-    this.health += 5;
+  eat() {
+    this.health -= 10;
     this.hunger += 10;
     console.log(`${this.name}'s health is ${this.health}`);
     return this;
@@ -20,6 +22,7 @@ class Animal {
       name: this.name,
       health: this.health,
       hunger: this.hunger,
+      walkies: this.walkies,
     });
   }
 }
@@ -30,17 +33,17 @@ class Cat extends Animal {
     this.content = content;
   }
 
-  playWool() {
-    this.health += 10;
-    this.hunger -= 10;
+  eat() {
+    this.health -= 10;
+    this.hunger += 10;
     console.log(`${this.name} is happy`);
     return this;
   }
-  naps() {
-    console.log(
-      `${this.name} is taking a lovely nap, they are ${this.content}`
-    );
+  walkies() {
+    console.log(`Taking ${this.name} for a walk, they are ${this.content}`);
     this.health += 10;
+    this.hunger -= 10;
     return this;
   }
 }
+module.exports = { Cat };
