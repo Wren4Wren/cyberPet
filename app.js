@@ -102,5 +102,5 @@ try {
     start(game);
 
 } catch (error){
-    console.log("Error Fecth", error)
+    console.log("Error Fetch", error)
 }
